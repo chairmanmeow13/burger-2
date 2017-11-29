@@ -1,0 +1,9 @@
+
+[
+ {"burger_name":"Plymouth Roquefort Burger", "devoured":0, "eatenby": null},
+ {"burger_name":"I Know Why the Cajun Burger Sings", "devoured":1, "eatenby": "Bob"},
+ {"burger_name":"Poutine on the Ritz Burger", "devoured":0, "eatenby": null},
+ {"burger_name":"Mushroom with a View Burger", "devoured":0, "eatenby": null},
+ {"burger_name":"Sweet Home Avocado Burger", "devoured":0, "eatenby": null},
+ {"burger_name":"A Good Manchego is Hard to Find Burger", "devoured":1, "eatenby": "Linda"}
+]

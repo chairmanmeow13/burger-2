@@ -1,0 +1,158 @@
+
+.clear {
+    font-style: normal;
+}
+
+
+/*
+    Change Mouse Pointer on Hover
+*/
+.pointer {
+    cursor: pointer;
+}
+
+
+/*
+    mouse over high-lighting
+*/
+.pointer:hover {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+
+/*
+    Center Text Horizontally
+*/
+.center {
+    text-align: center;
+}
+
+.block-centered{
+    margin: 0 auto;
+    float: none;
+}
+
+/*
+    Element Hide/Show - The class is either added or 
+    removed via jQuery as needed.
+*/
+.element-hide {
+    display: none;
+    visibility: hidden;
+}
+
+.element-show {
+    display: block;
+    visibility: visible;
+}
+
+
+/*
+    Fixed position and top most element, page
+    content will scroll behind it.
+*/
+.fixed-row {
+    background-color: #ddd;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+}
+
+
+/*
+    Dynamic Message Styling
+*/
+.dynamic-msg {
+    font-weight: bold;
+}
+
+
+/*
+    User Error Message Styling
+*/
+.error-msg {
+    color: red;
+    font-style: none;
+}
+
+
+/*
+    User Default Message Styling
+*/
+.default-msg {
+    color: black;
+    font-style: none;
+}
+
+
+/*
+    User Wait Message Styling
+*/
+.wait-msg {
+    color: blue;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+
+/*
+    Usually part of a label belonging to and input tag. 
+    Also intended to inherit the color specified by a prior
+    class or property.
+*/
+.info-msg {
+    font-weight: bolder;
+}
+
+.info-msg-small {
+    font-size: small;
+    font-weight: bolder;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.demo-body {
+    margin-top: 125px;
+}
+
+.demo-section {
+    margin: 10px;
+}
+
+.side-pad {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/*
+    Site specific CSS, everything above is somewhat
+    generic.
+*/
+.form-field {
+    width: 100%;
+    max-width: 300px;
+}
+
+.form-submit {
+    position: relative;
+    padding-top: 75px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+/*
+Sets the height to 80/100ths of the viewport.
+*/
+.modal-dialog {
+    max-height: 80vh;
+}
+
+.modal-image {
+    width: 128px; 
+    height: 128px;
+}
+
+

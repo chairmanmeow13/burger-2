@@ -1,0 +1,120 @@
+<!-- Heading and Logo END -->
+        <div class="row center">
+            <div class="col-md-3 col-sm-3"></div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <h1>{{ heading }}</h1>
+                <img src={{ logo }} alt="Logo"/>
+            </div>
+            <div class="col-md-3 col-sm-3"></div>
+        </div>
+        <!-- Heading and Logo END -->
+        <!-- Navigation Buttons START -->
+        <div class="row center">
+            <div class="col-md-3"></div>
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <form method="get" target="_self" action="/admin">
+                    <div class="xtooltip">
+                        <button type="submit" class="btn btn-warning">Burger Admin</button>
+                        <span class="xtooltiptext">Delete burgers from the database</span>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <form method="get" target="_self" action="/cust">
+                    <div class="xtooltip">
+                        <button type="submit" class="btn btn-warning">Customer Admin</button>
+                        <span class="xtooltiptext">Add to, or Delete customers from the database</span>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <!-- Navigation Buttons END -->
+        <!-- Burger description and submit button START -->
+        <div class="row center">
+            <div class="col-md-3 col-sm-3"></div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <form method="post" target="_self" action="/index">
+                    <div class="form-group">
+                        <label for="burgertext">Describe Your Burger :</label>
+                        <textarea id="burgertext" name="burgertext" class="form-control form-field block-centered" rows="5" required></textarea>
+                        <hr>
+                        <button type="submit" class="btn btn-primary">Create this Burger!</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3 col-sm-3"></div>
+        </div>
+        <!-- Burger description and submit button END -->
+        <!-- Eat/Ate a burger list START -->
+        <div class="row center">
+            <div class="col-md-1"></div>
+            <div class="col-md-4 col-sm-5 col-xs-6">
+                <h3>{{burgers.eat.length}} - Burgers to DEVOUR!!!</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="center">ID</th>
+                            <th class="center">Burger</th>
+                            <th class="center">Pick a Customer</th>
+                            <th class="center">Click to Devour!</th>
+                        </tr>
+                    </thead>
+                    <tbody id="burgerEatTable" data={{burgers.customers.length}}>
+                        {{#each burgers.eat }}
+                        <tr>
+                            <form method="post" target="_self" action="/index">
+                                <td>{{this.id}}</td>
+                                <td>{{this.burger_name}}</td>
+                                <td>
+                                    <select id="burgcust" name="burgcust" type="text" class="ui fluid dropdown" required>
+                                        <option value="">Name?</option>
+                                        {{#each @root.burgers.customers}}
+                                            <option value={{this.id}}>{{this.customer_name}}</option>
+                                        {{/each}}
+                                    </select>
+                                </td>
+                                <td>
+                                    <input id="burgerid" name="burgerid" type="hidden" value={{this.id}}>
+                                    <input id="burgerdev" name="burgerdev" type="hidden" value={{this.devoured}}>
+                                    <button type="submit" class="btn btn-danger">Devour!</button>
+                                </td>
+                            </form>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-2 col-sm-2"></div>
+            <div class="col-md-4 col-sm-5 col-xs-6">
+                <h3>{{burgers.ate.length}} - Burgers to devour AGAIN!!!</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="center">ID</th>
+                            <th class="center">Burger</th>
+                            <th class="center">Eaten By</th>
+                            <th class="center">Make Another!</th>
+                        </tr>
+                    </thead>
+                    <tbody id="burgerAteTable">
+                        {{#each burgers.ate }}
+                            <tr>
+                                <td>{{this.id}}</td>
+                                <td>{{this.burger_name}}</td>
+                                <td>{{this.eatenby}}</td>
+                                <td>
+                                    <form method="post" target="_self" action="/index">
+                                        <input id="burgerid" name="burgerid" type="hidden" value={{this.id}}>
+                                        <input id="burgerdev" name="burgerdev" type="hidden" value={{this.devoured}}>
+                                        <button type="submit" class="btn btn-success">Make!</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <!-- Eat/Ate a burger list END -->
